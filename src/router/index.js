@@ -4,12 +4,12 @@ import Сurrency from '../views/Сurrency.vue'
 const routes = [
   {
     path: '/',
-    name: 'currency',
+    name: 'Currency',
     component: Сurrency
   },
   {
     path: '/converter',
-    name: 'converter',
+    name: 'Converter',
     component: () => import('../views/Converter.vue')
   }
 ]

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="container home">
     <ListСurrency/>
   </div>
 </template>
@@ -15,3 +15,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+  .home{
+    margin-bottom: 50px;
+  }
+</style>

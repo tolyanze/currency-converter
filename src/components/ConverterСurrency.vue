@@ -1,29 +1,39 @@
 <template>
-  <div class="container d-flex justify-content-center">
-    <div class="input-append btn-group">
-      <input class="span2" size="16" type="text" v-model="selected">
-      <select v-model="selectOne">
-        <option 
-        v-for="(select, index) in store.getters.getFilterValute"
-        :key="index"
-        v-bind:value="select.CharCode">
-          {{select.CharCode}}
-        </option>
-      </select>
+  <div class="row">
+    <div class="col-sm-10 mt-5">
+      <div class="d-flex flex-sm-row flex-column align-items-center justify-content-center">
+        <div class="input-append btn-group">
+          <input class="span2" size="16" type="text" v-model="selected">
+          <select v-model="selectOne">
+            <option 
+            v-for="(select, index) in store.getters.getFilterValute"
+            :key="index"
+            v-bind:value="select.CharCode">
+              {{select.CharCode}}
+            </option>
+          </select>
+        </div>
+        <div id="reverse" class="mx-3" @click="reverse(selectOne,basicValute)" >&hArr;</div>
+        <div class="input-append btn-group">
+          <input class="span2" size="16" type="text" :value="curse.toFixed(4)"  disabled>
+          <select v-model="basicValute">
+            <option selected>{{basicValute}}</option>
+            <option 
+            v-for="(basic, index) in store.getters.getFilterValute"
+            :key="index"
+            v-bind:value="basic.CharCode"
+            >
+              {{basic.CharCode}}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div id="reverse" class="mx-3" @click="reverse(selectOne,basicValute)" >&hArr;</div>
-    <div class="input-append btn-group">
-      <input class="span2" size="16" type="text" :value="curse.toFixed(4)"  >
-      <select v-model="basicValute">
-        <option selected>{{basicValute}}</option>
-        <option 
-        v-for="(basic, index) in store.getters.getFilterValute"
-        :key="index"
-        v-bind:value="basic.CharCode"
-        >
-          {{basic.CharCode}}
-        </option>
-      </select>
+    <div class="col-sm-2 d-flex flex-column">
+      <a class="my-5" href="https://webasite.ru/play/">
+        <img class="w-100" src="@/assets/img/play.png" alt="play">
+        <p>Игра онлайн для детей</p>
+      </a>
     </div>
   </div>
 </template>

@@ -25,7 +25,7 @@ export default createStore({
     async fetchValute({ commit }){
       try{
         const data  = await axios.get(
-          "http://www.cbr-xml-daily.ru/daily_json.js"
+          "https://www.cbr-xml-daily.ru/daily_json.js"
         );
         commit ("SET_ListsValute", data.data.Valute);
       }catch(error){
